@@ -53,14 +53,13 @@ a {
 }
 
 .button {
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 700;
   font-size: 18px;
-  letter-spacing: -1px;
-  height: 34px;
+  min-height: 34px;
   color: #ffffff;
   background: transparent;
   border: 1px solid white;
-  padding: 0;
 }
 
 /*
@@ -75,7 +74,6 @@ a {
 
 .content {
   width: 1140px;
-  height: 531px;
   display: flex;
   justify-content: space-between;
 }
@@ -100,7 +98,7 @@ a {
   height: 386px;
 }
 
-.result__video-container video {
+.result__video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -119,29 +117,31 @@ a {
 .search-form__fieldset {
   display: flex;
   flex-direction: column;
-  height: 53px  ;
   justify-content: space-between;
   border-width: 0;
 }
+
 .search-form__fieldset-title {
   font-size: 18px;
   font-weight: 400;
+  margin-bottom: 5px;
 }
 
-input[type="text"] {
+.search-form__textfield {
   width: 225px;
   height: 27px;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
   background: none;
   border-radius: 0;
   outline: none;
   appearance: none;
-
   border-style: solid;
   border-color: #ffffff;
   border-width: 1px 0;
-  font-size: 18px;
-  letter-spacing: -0.9px;
-  color: #ffffff;
+  padding: 0;
 }
 
 .search-form__checkbox-list {
@@ -154,7 +154,10 @@ input[type="text"] {
 .search-form__checkbox-list .search-form__label {
   display: flex;
   align-items: center;
-  height: 18px;
+}
+
+.search-form__label-text {
+  line-height: 18px;
 }
 
 .search-form__checkbox-list .search-form__label:last-child {
@@ -169,7 +172,7 @@ input[type="text"] {
   border: 1px solid white;
 }
 
-input[type="checkbox"]:checked + .search-form__pseudo-checkbox::before {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -216,6 +219,10 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::before {
 .content__accent {
   font-size: 75px;
   line-height: 70px;
+}
+
+.title {
+  margin-bottom: 22px;
 }
 
 .content__accent {
@@ -284,6 +291,7 @@ a для состояния FOCUS обводка content__card-link обводи
 .content__video-card-thumbnail {
   width: 194px;
   height: 103px;
+  object-fit: cover;
   margin: 2px -2px 2px 0;
 }
 
@@ -317,6 +325,13 @@ a для состояния FOCUS обводка content__card-link обводи
 .content__card-link:active .content__video-card,
 .button:active {
   background-color: #545050;
+}
+
+.content__card-link:active .content__video-card-title,
+.content__card-link:active .content__video-card-description,
+.search-form__label:has(:active) .search-form__label-text,
+.button:active {
+  text-decoration: none;
 }
 
 /*
